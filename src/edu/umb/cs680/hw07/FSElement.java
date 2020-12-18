@@ -31,11 +31,14 @@ abstract class FSElement
 	public void setName(String name) {
 		this.name = name;
 	}
+	public void setSize(int size) {
+		this.size = size;
+	}
 	public void setParent(Directory parent) {
 		this.parent = parent;
 	}
 	abstract boolean isDirectory();
-	abstract boolean inDirectory();
+	abstract boolean inDirectory(Directory dir);
 
 }
 

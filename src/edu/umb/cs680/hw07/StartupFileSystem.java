@@ -6,6 +6,7 @@ public class StartupFileSystem {
 	public static void main(String[] args)
 	{
         FileSystem fs = FileSystem.getFileSystem();
+
         Directory root = new Directory(null, "root", 0, LocalDateTime.now()); 
         Directory home = new Directory(root, "home", 0, LocalDateTime.now());
         Directory applications = new Directory(root, "applications", 0, LocalDateTime.now());
@@ -28,23 +29,36 @@ public class StartupFileSystem {
         home.appendChild(d);
         code.appendChild(e);
         code.appendChild(f);
-        fs.getRootDirs();
 
-        System.out.println("root name: " + root.getName());
-        System.out.println("root size: " + root.getSize());
-        System.out.println("isDirectory: " + root.isDirectory());
-
-        
-        System.out.println("file name: " + e.getName());
-        System.out.println("file size: " + e.getSize());
-        System.out.println("isDirectory: " + e.isDirectory());
+        System.out.println("Total disk consumption of " + code.name + ": " + code.getTotalSize());
+        System.out.println();
+        e.setName("newName.txt");
+        System.out.println("renamed e.txt to " + e.getName());
+        System.out.println();
 
         for (FSElement fsElement: root.getChildren())   {
-            System.out.println("name: " + fsElement.getName());
-            System.out.println("size: " + fsElement.getSize());
-            System.out.println("creation time: " + fsElement.getCreationTime());
-            System.out.println("is directory: " + fsElement.isDirectory());
-            System.out.println("parent name: " + fsElement.getParent().getName());
+            System.out.println("Name: " + fsElement.getName());
+            System.out.println("Size: " + fsElement.getSize());
+            System.out.println("Creation time: " + fsElement.getCreationTime());
+            System.out.println("Is directory: " + fsElement.isDirectory());
+            System.out.println("Parent name: " + fsElement.getParent().getName());
+            System.out.println();
         }
+        for (FSElement fsElement: home.getSubDirectories())   {
+            System.out.println("Name: " + fsElement.getName());
+            System.out.println("Size: " + fsElement.getSize());
+            System.out.println("Creation time: " + fsElement.getCreationTime());
+            System.out.println("Is directory: " + fsElement.isDirectory());
+            System.out.println("Parent name: " + fsElement.getParent().getName());
+            System.out.println();
+        }
+        for (FSElement fsElement: code.getFiles())   {
+            System.out.println("Name: " + fsElement.getName());
+            System.out.println("Size: " + fsElement.getSize());
+            System.out.println("Creation time: " + fsElement.getCreationTime());
+            System.out.println("Is directory: " + fsElement.isDirectory());
+            System.out.println("Parent name: " + fsElement.getParent().getName());
+            System.out.println();
+        }        
 	}
 }
