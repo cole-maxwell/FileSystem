@@ -7,7 +7,7 @@
   in a shell. 
 -->
 
-<project name="hw_07" basedir="."  default="clean">
+<project name="FileSystem" basedir="."  default="clean">
 
 	<property environment="env"/>
     <property name="src" location="src" />
