@@ -6,7 +6,7 @@ FSElement.java is an abstract class extended by Directory.java and File.java.<br
 
 ---- Compile & Run ----<br />
 
-**_cd_** to **_/FileSystem_** and type **_ant -f build.xml_**.<br />
+Clone the repo, **_cd_** to **_/FileSystem_** and type **_ant -f build.xml_**.<br />
 
 ---- Prerequisite Steps & Environment Setup ----<br />
 
