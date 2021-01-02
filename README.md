@@ -1,8 +1,8 @@
 # FileSystem
 ---- Program Description ----<br />
 
-A FileSystem is implemented as a Singleton class and is comprised of two types of file system elements, directories and files.<br />
-FSElement.java is an abstract class extended by Directory.java and File.java.<br />
+A FileSystem is implemented as a Singleton class and is comprised of two types of file system elements: directories & files.<br />
+FSElement.java is an abstract class extended by Directory.java & File.java.<br />
 
 ---- Compile & Run ----<br />
 
